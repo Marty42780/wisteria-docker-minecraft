@@ -17,5 +17,5 @@ WORKDIR /minecraft
 RUN ssh-keygen -A
 EXPOSE 25565 22
 
-CMD /usr/sbin/sshd -D & java -Xmx1024M -Xms1024M -jar /minecraft/minecraft-server.jar nogui
+CMD /usr/sbin/sshd -D & start.sh
 
