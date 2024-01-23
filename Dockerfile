@@ -17,5 +17,5 @@ WORKDIR /minecraft
 RUN ssh-keygen -A
 EXPOSE 25565 22
 
-CMD /usr/sbin/sshd -D & ./start.sh
+CMD /usr/sbin/sshd -D & bash start.sh
 
