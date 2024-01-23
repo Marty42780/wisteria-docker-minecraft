@@ -8,9 +8,11 @@ RUN apk add --no-cache \
     rsync \
     openssh-server
 
-RUN ssh-keygen -A
+RUN adduser -D -h /minecraft -s /bin/bash minecraft
+RUN chown -R minecraft:minecraft /minecraft
 
+RUN ssh-keygen -A
 EXPOSE 25565 22
 
-ENTRYPOINT [ /usr/sbin/sshd -D & java -Xmx1024M -Xms1024M -jar /minecraft-server.jar nogui ]
+CMD /usr/sbin/sshd -D & java -Xmx1024M -Xms1024M -jar /minecraft/minecraft-server.jar nogui
 
