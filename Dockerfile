@@ -11,7 +11,6 @@ RUN apk add --no-cache \
 RUN adduser -D -h /minecraft -s /bin/bash minecraft
 RUN chown -R minecraft:minecraft /minecraft
 
-USER minecraft
 WORKDIR /minecraft
 
 EXPOSE 25565 22
