@@ -8,8 +8,6 @@ RUN apk add --no-cache \
     rsync \
     openssh-server
 
-RUN ssh-keygen -A
-
 RUN adduser -D -h /minecraft -s /bin/bash minecraft
 RUN chown -R minecraft:minecraft /minecraft
 
@@ -18,5 +16,5 @@ WORKDIR /minecraft
 
 EXPOSE 25565 22
 
-CMD /usr/sbin/sshd -D & bash start.sh
+CMD ssh-keygen -A && /usr/sbin/sshd -D & bash start.sh
 
