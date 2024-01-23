@@ -1,9 +1,10 @@
-FROM alpine:3.14
+FROM alpine:latest
 
 # Install dependencies
 RUN apk update 
 RUN apk add --no-cache \
     openjdk17-jre \
+    bash \
     rsync \
     openssh-server
 
